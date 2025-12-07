@@ -19,7 +19,7 @@ This is Task 1 of the Web Development Internship at SkillCraft Technology. The p
 - **Responsive Design** - Mobile-first approach
 
 ## 📁 Project Structure
-     skillcraft-landingpage/
+     STC_WD_1/
       │
       ├── index.html # Main HTML file
       ├── style.css # All CSS styles
@@ -27,7 +27,7 @@ This is Task 1 of the Web Development Internship at SkillCraft Technology. The p
       └── README.md # Project documentation
 
 ## 🚀 Live Demo
-**[View Live Project](https://tethi04.github.io/skillcraft-landingpage/)**
+**[View Live Project](https://tethi04.github.io/SCT_WD_1/)**
 
 ## 📱 Responsive Behavior
 - **Desktop**: Full navigation menu with hover effects
@@ -58,7 +58,7 @@ This is Task 1 of the Web Development Internship at SkillCraft Technology. The p
 ## 📝 How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/tethi04/skillcraft-landingpage.git
+   git clone https://github.com/tethi04/SCT_WD_1.git
 
 2. Open index.html in your browser
 
