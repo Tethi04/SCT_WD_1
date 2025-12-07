@@ -1,53 +1,96 @@
-// JavaScript for Task 1 - Responsive Landing Page
-document.addEventListener('DOMContentLoaded', function() {
+// ===== NAVBAR SCROLL EFFECT =====
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// ===== MENU TOGGLE FOR MOBILE =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
     
-    // Navigation scroll effect
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            nav.style.backgroundColor = '#0f1123';
-            nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        } else {
-            nav.style.backgroundColor = '#1a1a2e';
-            nav.style.boxShadow = 'none';
+    // Change menu icon
+    const icon = menuToggle.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// ===== SMOOTH SCROLL FOR NAV LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Close mobile menu if open
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         }
     });
-    
-    // Hover effect for navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+});
+
+// ===== NAV LINK HOVER EFFECT ENHANCEMENT =====
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
     });
     
-    // Button click effect
-    const button = document.querySelector('.btn');
-    if (button) {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
-        });
-    }
-    
-    // Card hover animation
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
     });
 });
+
+// ===== CARD ANIMATION ON SCROLL =====
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all cards
+document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// ===== DYNAMIC YEAR IN FOOTER (OPTIONAL) =====
+const currentYear = new Date().getFullYear();
+const yearElement = document.querySelector('footer p');
+if (yearElement && yearElement.textContent.includes('2025')) {
+    yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
+}
+
+console.log('SkillCraft Task 1 - Responsive Landing Page loaded successfully!');
