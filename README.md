@@ -3,6 +3,9 @@
 ## 📋 Project Overview
 This is Task 1 of the Web Development Internship at SkillCraft Technology. The project demonstrates the creation of a fully responsive landing page with interactive navigation, modern design, and mobile-friendly layout.
 
+## 🚀 Live Demo
+**[View Live Project](https://tethi04.github.io/SCT_WD_1/)**
+
 ## ✨ Features Implemented
 - ✅ **Fixed Navigation Bar** - Sticky header that stays visible while scrolling
 - ✅ **Scroll Color Change** - Navigation bar changes background color on scroll
@@ -25,9 +28,6 @@ This is Task 1 of the Web Development Internship at SkillCraft Technology. The p
       ├── style.css # All CSS styles
       ├── script.js # JavaScript functionality
       └── README.md # Project documentation
-
-## 🚀 Live Demo
-**[View Live Project](https://tethi04.github.io/SCT_WD_1/)**
 
 ## 📱 Responsive Behavior
 - **Desktop**: Full navigation menu with hover effects
@@ -73,14 +73,24 @@ This is Task 1 of the Web Development Internship at SkillCraft Technology. The p
 •Mobile responsive design
 •Clean and modern UI
 
-👨‍💻 Developer
-Tethi Biswas
+### 👩‍💻 Author
+**Tethi Biswas**  
+Web Development Intern, SkillCraft Technology  
+- **GitHub**: [@tethi04](https://github.com/tethi04)
+- **Repository**: [SCT_WD_1](https://github.com/tethi04/SCT_WD_1)
+- **Live Demo**: [Responsive Landing Page ](https://tethi04.github.io/SCT_WD_1/)
 
-Web Development Intern, SkillCraft Technology
+### 📄 License
+This project is created as part of the SkillCraft Technology Internship Program. All rights reserved.
 
-December 2025
+---
 
-*Offer ID: SCT/DEC25/0751*
+**Task Details**  
+- **Task**: #01 -Responsive Landing Page
+- **Track**: Web Development (WD)  
+- **Offer ID**: SCT/DEC25/0751  
+- **Submission Date**: December 2025  
 
-Track: Web Development (WD)
-  
+---
+
+⭐ *If you find this project useful, please give it a star on GitHub!*
